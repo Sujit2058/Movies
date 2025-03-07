@@ -1,18 +1,23 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import MovieCard from './Components/MovieCard';
+import Home from './Pages/Home';
+import Favourites from './Pages/Favourites';
+import NavBar from './Components/NavBar';
 
 
 function App() {
-  const movieNumber = 1;
-
+  
 
   return (
     <>
-      {movieNumber === 1 ? 
-      (<MovieCard movie={{ title: "Littile Krishna", release_date: "2024" }} />) 
-      : 
-      (<MovieCard movie={{ title: "Krishna Aur Balaram", release_date: "2024" }} />)
-      }
+    <NavBar/>
+    <main className='main-content'>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/favourites' element={<Favourites/>}/>
+        <Route path='/?' element={<Favourites/>}/>
+      </Routes>
+    </main>
     </>
   );
 }
