@@ -1,18 +1,13 @@
 import { useState } from "react";
 import MovieCard from "../Components/MovieCard";
+import { searchMovies, getPopularMovies } from "../Services/api";
 import "../CSS/Home.css"
 
 function Home() {
 
     const [searchQuerry, setSearchQuery ] = useState("");
 
-    const movies = [
-        { id: 1, title: "Little Krishna", release_date: "2024" },
-        { id: 2, title: "Krishna Aur Balaram", release_date: "2024" },
-        { id: 3, title: "Krishna", release_date: "2024" },
-        { id: 4, title: "Krishna, The Suprem Personality", release_date: "2020" },
-    ]
-
+    const movies = getPopularMovies()
 
     const handleSearch = (e)=> {
         e.preventDefault()
