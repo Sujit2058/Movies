@@ -1,4 +1,5 @@
 import React from "react";
+import "../CSS/MovieCard.css"
 
 function MovieCard({ movie }) {
     function onFavouraitClick() {
@@ -13,7 +14,7 @@ function MovieCard({ movie }) {
                 </div>
 
             </div>
-            <div className="Movie-info">
+            <div className="movie-info">
                 <h3>{movie.title}</h3>
                 <p>{movie.release_date}</p>
             </div>
