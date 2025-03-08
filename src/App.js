@@ -4,13 +4,14 @@ import './CSS/App.css';
 import Home from './Pages/Home';
 import Favourites from './Pages/Favourites';
 import NavBar from './Components/NavBar';
+import { MovieProvider } from './Contexts/MovieContext';
 
 
 function App() {
   
 
   return (
-    <>
+    <MovieProvider>
     <NavBar/>
     <main className='main-content'>
       <Routes>
@@ -19,7 +20,7 @@ function App() {
         <Route path='/?' element={<Favourites/>}/>
       </Routes>
     </main>
-    </>
+    </MovieProvider>
   );
 }
 
